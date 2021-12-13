@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerCharacterController = GetComponent<CharacterController>();
         playerSpeed = 100;
-        rotationSpeed = 700;
+        rotationSpeed = 500;
     }
 
     // Update is called once per frame
