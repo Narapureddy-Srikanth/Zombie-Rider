@@ -11,19 +11,20 @@ public class ShootingPath : MonoBehaviour
     private float thresholdForJoystick;
     private Vector3 offset, vectorPathDirection, liftOffset;
     private float pathLength;
-    private bool isActive;
+    private float minJoystickMovement, defaultMinJoystickMovement;
     private Vector3 ifActiveDirection;
 
     // Start is called before the first frame update
     void Start()
     {
         pathLength = 12f;
-        thresholdForJoystick = 0.4f;
+        thresholdForJoystick = 0.3f;
+        defaultMinJoystickMovement = 0.35f;
+        minJoystickMovement = 0f;
         lineRendererForShootingPath = GetComponent<LineRenderer>();
         offset = Vector3.down;
         liftOffset = Vector3.up * 0.1f;
         vectorPathDirection = new Vector3(0f, 0f, 1f);
-        isActive = false;
     }
 
     // Update is called once per frame
@@ -50,17 +51,18 @@ public class ShootingPath : MonoBehaviour
                 lineRendererForShootingPath.SetPosition(1, offset + vectorPathDirection * pathLength + liftOffset);
             }
             ifActiveDirection = locationOfJoystick;
-            isActive = true;
+            minJoystickMovement = Mathf.Max(Mathf.Abs(HorizontalSpeed()), Mathf.Abs(VerticalSpeed()));
         }
         else
         {
             lineRendererForShootingPath.positionCount = 0;
-            if (isActive)
+            // If previous joystick movement is greater the default joystick movement, we fire.
+            if (minJoystickMovement >= defaultMinJoystickMovement)
             {
                 // TODO: move this direction and fire
                 GameObject playerGameObject = GameObject.Find("Player");
                 playerGameObject.transform.LookAt(ifActiveDirection);
-                isActive = false;
+                minJoystickMovement = 0f;
             }
         }
     }
