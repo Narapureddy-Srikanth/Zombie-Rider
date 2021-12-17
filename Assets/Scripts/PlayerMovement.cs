@@ -6,16 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private Joystick joystickController;
+
     private CharacterController playerCharacterController;
-    private int playerSpeed;
-    private int rotationSpeed;
+    private float playerSpeed;
+    private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         playerCharacterController = GetComponent<CharacterController>();
-        playerSpeed = 100;
-        rotationSpeed = 500;
+        playerSpeed = 100f;
+        rotationSpeed = 500f;
     }
 
     // Update is called once per frame

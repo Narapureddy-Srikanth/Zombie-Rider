@@ -6,6 +6,10 @@ public class ShootingPath : MonoBehaviour
 {
     [SerializeField]
     private Joystick joystickForShootingPath;
+    [SerializeField]
+    private Transform bullet;
+    [SerializeField]
+    private Transform shootingPosition;
 
     private LineRenderer lineRendererForShootingPath;
     private float thresholdForJoystick;
@@ -59,10 +63,13 @@ public class ShootingPath : MonoBehaviour
             // If previous joystick movement is greater the default joystick movement, we fire.
             if (minJoystickMovement >= defaultMinJoystickMovement)
             {
-                // TODO: move this direction and fire
+                // Move the player towards direction of firing
                 GameObject playerGameObject = GameObject.Find("Player");
                 playerGameObject.transform.LookAt(ifActiveDirection);
                 minJoystickMovement = 0f;
+
+                // initiate a bullet
+                Instantiate(bullet, shootingPosition.position, shootingPosition.transform.rotation);
             }
         }
     }
