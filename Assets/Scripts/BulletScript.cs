@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    [SerializeField]
+    private Transform hitVFXEffect;
+    [SerializeField]
+    private Transform noHitVFXEffect;
+
     private CharacterController bulletController;
     private float bulletSpeed;
     private float pathLength;
@@ -23,12 +28,16 @@ public class BulletScript : MonoBehaviour
         pathLength -= bulletSpeed * Time.deltaTime;
         if (pathLength <= 0)
         {
+            Transform noHitEffect = Instantiate(noHitVFXEffect, transform.position, Quaternion.identity);
+            Destroy(noHitEffect.gameObject, 1f);
             Destroy(gameObject);
         }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        Transform hitEffect = Instantiate(hitVFXEffect, transform.position, Quaternion.identity);
+        Destroy(hitEffect.gameObject, 1f);
         Destroy(gameObject);
     }
 }
