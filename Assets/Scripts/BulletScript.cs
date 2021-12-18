@@ -12,21 +12,32 @@ public class BulletScript : MonoBehaviour
     private CharacterController bulletController;
     private float bulletSpeed;
     private float pathLength;
+    private Vector3 startPositionOfBullet, endPositionOfBullet;
 
     // Start is called before the first frame update
     void Start()
     {
         bulletController = GetComponent<CharacterController>();
-        bulletSpeed = 100f;
+        bulletSpeed = 60f;
         pathLength = 12f;
+        startPositionOfBullet = transform.position;
+        endPositionOfBullet = transform.position + transform.forward * pathLength;
     }
 
     // Update is called once per frame
     void Update()
     {
-        bulletController.Move(transform.forward * bulletSpeed * Time.deltaTime);
-        pathLength -= bulletSpeed * Time.deltaTime;
-        if (pathLength <= 0)
+        float updatedBulletSpeed = bulletSpeed;
+
+        // To check if next position is out of pathLength, if going outside will reduce the speed in last update
+        Vector3 nextPositionOfBullet = transform.position + transform.forward * bulletSpeed * Time.deltaTime;
+        if(Vector3.Magnitude(nextPositionOfBullet - startPositionOfBullet) > pathLength)
+        {
+            updatedBulletSpeed = Mathf.Max(5f, Vector3.Magnitude(endPositionOfBullet - transform.position) / Time.deltaTime);
+        }
+
+        bulletController.Move(transform.forward * updatedBulletSpeed * Time.deltaTime);
+        if (Vector3.Magnitude(transform.position - startPositionOfBullet) >= pathLength)
         {
             Transform noHitEffect = Instantiate(noHitVFXEffect, transform.position, Quaternion.identity);
             Destroy(noHitEffect.gameObject, 1f);
