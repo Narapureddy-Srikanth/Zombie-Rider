@@ -12,6 +12,7 @@ public class ShootingPath : MonoBehaviour
     private Transform shootingPosition;
 
     private LineRenderer lineRendererForShootingPath;
+    private Animator playerAnimator;
     private float thresholdForJoystick;
     private Vector3 offset, vectorPathDirection, liftOffset;
     private float pathLength;
@@ -21,11 +22,12 @@ public class ShootingPath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lineRendererForShootingPath = GetComponent<LineRenderer>();
+        playerAnimator = GetComponentInParent<Animator>();
         pathLength = 12f;
         thresholdForJoystick = 0.3f;
         defaultMinJoystickMovement = 0.35f;
         minJoystickMovement = 0f;
-        lineRendererForShootingPath = GetComponent<LineRenderer>();
         offset = Vector3.down;
         liftOffset = Vector3.up * 0.1f;
         vectorPathDirection = new Vector3(0f, 0f, 1f);
@@ -34,8 +36,12 @@ public class ShootingPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(playerAnimator.GetBool("isFiring") == true)
+        {
+            playerAnimator.SetBool("isFiring", false);
+        }
         // If joystick is active show the path, else don't show.
-        if(isJoystickActive())
+        if (isJoystickActive())
         {
             lineRendererForShootingPath.positionCount = 2;
             lineRendererForShootingPath.SetPosition(0, offset);
@@ -71,6 +77,9 @@ public class ShootingPath : MonoBehaviour
 
                 // initiate a bullet
                 Instantiate(bullet, shootingPosition.position, shootingPosition.transform.rotation);
+
+                // Add fire animation
+                playerAnimator.SetBool("isFiring", true);
             }
         }
     }
