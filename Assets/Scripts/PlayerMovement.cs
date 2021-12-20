@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Joystick joystickController;
 
     private CharacterController playerCharacterController;
+    private Animator playerAnimator;
     private float playerSpeed;
     private float rotationSpeed;
 
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerCharacterController = GetComponent<CharacterController>();
+        playerAnimator = GetComponent<Animator>();
         playerSpeed = 100f;
         rotationSpeed = 500f;
     }
@@ -32,6 +34,14 @@ public class PlayerMovement : MonoBehaviour
             // Along with movement, we rotate the player towards the movement with a smooth transition
             Quaternion quaternion = Quaternion.LookRotation(directionMovement, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, quaternion, rotationSpeed * Time.deltaTime);
+
+            // Add run animation
+            playerAnimator.SetBool("isRunning", true);
+        }
+        else
+        {
+            // Add idle animation
+            playerAnimator.SetBool("isRunning", false);
         }
     }
 

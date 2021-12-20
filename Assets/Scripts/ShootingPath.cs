@@ -65,7 +65,8 @@ public class ShootingPath : MonoBehaviour
             {
                 // Move the player towards direction of firing
                 GameObject playerGameObject = GameObject.Find("Player");
-                playerGameObject.transform.LookAt(ifActiveDirection);
+                playerGameObject.transform.LookAt(ifActiveDirection + Vector3.down);
+                transform.LookAt(ifActiveDirection);
                 minJoystickMovement = 0f;
 
                 // initiate a bullet
