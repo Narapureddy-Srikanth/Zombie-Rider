@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerCharacterController = GetComponent<CharacterController>();
         playerAnimator = GetComponent<Animator>();
-        playerSpeed = 100f;
+        playerSpeed = 200f;
         rotationSpeed = 500f;
     }
 
