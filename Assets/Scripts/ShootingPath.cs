@@ -28,8 +28,8 @@ public class ShootingPath : MonoBehaviour
         thresholdForJoystick = 0.3f;
         defaultMinJoystickMovement = 0.35f;
         minJoystickMovement = 0f;
-        offset = Vector3.down;
-        liftOffset = Vector3.up * 0.1f;
+        offset = Vector3.down + Vector3.up * 0.1f;
+        liftOffset = Vector3.up * 0.2f;
         vectorPathDirection = new Vector3(0f, 0f, 1f);
     }
 
