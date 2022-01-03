@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 54b9b03c990254f46bb17c573be0774c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone_ Head
+    100002: Bone_ HeadNub
+    100004: Bone_ L Calf
+    100006: Bone_ L Clavicle
+    100008: Bone_ L Finger0
+    100010: Bone_ L Finger01
+    100012: Bone_ L Finger02
+    100014: Bone_ L Finger0Nub
+    100016: Bone_ L Finger1
+    100018: Bone_ L Finger11
+    100020: Bone_ L Finger12
+    100022: Bone_ L Finger1Nub
+    100024: Bone_ L Finger2
+    100026: Bone_ L Finger21
+    100028: Bone_ L Finger22
+    100030: Bone_ L Finger2Nub
+    100032: Bone_ L Finger3
+    100034: Bone_ L Finger31
+    100036: Bone_ L Finger32
+    100038: Bone_ L Finger3Nub
+    100040: Bone_ L Foot
+    100042: Bone_ L Forearm
+    100044: Bone_ L Hand
+    100046: Bone_ L Thigh
+    100048: Bone_ L Toe0Nub
+    100050: Bone_ L UpperArm
+    100052: Bone_ Neck
+    100054: Bone_ Pelvis
+    100056: Bone_ R Calf
+    100058: Bone_ R Clavicle
+    100060: Bone_ R Finger0
+    100062: Bone_ R Finger01
+    100064: Bone_ R Finger02
+    100066: Bone_ R Finger0Nub
+    100068: Bone_ R Finger1
+    100070: Bone_ R Finger11
+    100072: Bone_ R Finger12
+    100074: Bone_ R Finger1Nub
+    100076: Bone_ R Finger2
+    100078: Bone_ R Finger21
+    100080: Bone_ R Finger22
+    100082: Bone_ R Finger2Nub
+    100084: Bone_ R Finger3
+    100086: Bone_ R Finger31
+    100088: Bone_ R Finger32
+    100090: Bone_ R Finger3Nub
+    100092: Bone_ R Foot
+    100094: Bone_ R Forearm
+    100096: Bone_ R Hand
+    100098: Bone_ R Thigh
+    100100: Bone_ R Toe0
+    100102: Bone_ R Toe0Nub
+    100104: Bone_ R UpperArm
+    100106: Bone_ Spine
+    100108: Bone_ Spine1
+    100110: Bone_ Spine2
+    100112: Bone_L Toe0
+    100114: CHR_Zcharacter_001
+    100116: //RootNode
+    100118: RootJoint
+    400000: Bone_ Head
+    400002: Bone_ HeadNub
+    400004: Bone_ L Calf
+    400006: Bone_ L Clavicle
+    400008: Bone_ L Finger0
+    400010: Bone_ L Finger01
+    400012: Bone_ L Finger02
+    400014: Bone_ L Finger0Nub
+    400016: Bone_ L Finger1
+    400018: Bone_ L Finger11
+    400020: Bone_ L Finger12
+    400022: Bone_ L Finger1Nub
+    400024: Bone_ L Finger2
+    400026: Bone_ L Finger21
+    400028: Bone_ L Finger22
+    400030: Bone_ L Finger2Nub
+    400032: Bone_ L Finger3
+    400034: Bone_ L Finger31
+    400036: Bone_ L Finger32
+    400038: Bone_ L Finger3Nub
+    400040: Bone_ L Foot
+    400042: Bone_ L Forearm
+    400044: Bone_ L Hand
+    400046: Bone_ L Thigh
+    400048: Bone_ L Toe0Nub
+    400050: Bone_ L UpperArm
+    400052: Bone_ Neck
+    400054: Bone_ Pelvis
+    400056: Bone_ R Calf
+    400058: Bone_ R Clavicle
+    400060: Bone_ R Finger0
+    400062: Bone_ R Finger01
+    400064: Bone_ R Finger02
+    400066: Bone_ R Finger0Nub
+    400068: Bone_ R Finger1
+    400070: Bone_ R Finger11
+    400072: Bone_ R Finger12
+    400074: Bone_ R Finger1Nub
+    400076: Bone_ R Finger2
+    400078: Bone_ R Finger21
+    400080: Bone_ R Finger22
+    400082: Bone_ R Finger2Nub
+    400084: Bone_ R Finger3
+    400086: Bone_ R Finger31
+    400088: Bone_ R Finger32
+    400090: Bone_ R Finger3Nub
+    400092: Bone_ R Foot
+    400094: Bone_ R Forearm
+    400096: Bone_ R Hand
+    400098: Bone_ R Thigh
+    400100: Bone_ R Toe0
+    400102: Bone_ R Toe0Nub
+    400104: Bone_ R UpperArm
+    400106: Bone_ Spine
+    400108: Bone_ Spine1
+    400110: Bone_ Spine2
+    400112: Bone_L Toe0
+    400114: CHR_Zcharacter_001
+    400116: //RootNode
+    400118: RootJoint
+    2100000: 'Material #4844'
+    4300000: CHR_Zcharacter_001
+    9500000: //RootNode
+    13700000: CHR_Zcharacter_001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #4844'
+    second: {fileID: 2100000, guid: 0d4cc1496f8ed6f4eb11a190b720e5f7, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
