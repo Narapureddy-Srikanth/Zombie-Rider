@@ -9,7 +9,6 @@ public class BulletScript : MonoBehaviour
     [SerializeField]
     private Transform noHitVFXEffect;
 
-    private CharacterController bulletController;
     private float bulletSpeed;
     private float pathLength;
     private Vector3 startPositionOfBullet, endPositionOfBullet;
@@ -17,7 +16,6 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletController = GetComponent<CharacterController>();
         bulletSpeed = 60f;
         pathLength = 12f;
         startPositionOfBullet = transform.position;
@@ -35,17 +33,18 @@ public class BulletScript : MonoBehaviour
         {
             updatedBulletSpeed = Mathf.Max(5f, Vector3.Magnitude(endPositionOfBullet - transform.position) / Time.deltaTime);
         }
+        transform.Translate(Vector3.forward * updatedBulletSpeed * Time.deltaTime);
 
-        bulletController.Move(transform.forward * updatedBulletSpeed * Time.deltaTime);
         if (Vector3.Magnitude(transform.position - startPositionOfBullet) >= pathLength)
         {
             Transform noHitEffect = Instantiate(noHitVFXEffect, transform.position, Quaternion.identity);
             Destroy(noHitEffect.gameObject, 1f);
             Destroy(gameObject);
         }
+        
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void OnCollisionEnter(Collision collision)
     {
         Transform hitEffect = Instantiate(hitVFXEffect, transform.position, Quaternion.identity);
         Destroy(hitEffect.gameObject, 1f);

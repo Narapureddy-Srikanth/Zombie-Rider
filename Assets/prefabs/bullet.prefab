@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8981990063453916618}
   - component: {fileID: 8981990063453916621}
   - component: {fileID: 8981990063453916620}
-  - component: {fileID: -794643769764268526}
   - component: {fileID: -1139885551992714064}
+  - component: {fileID: -2302130625229677018}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -97,24 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &-794643769764268526
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8981990063453916623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1139885551992714064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +111,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitVFXEffect: {fileID: 2732928951633187025, guid: f5a54bb3b07b1f6478bd4f6fd6188da4, type: 3}
   noHitVFXEffect: {fileID: 8854911927920330143, guid: 7557eb821d0542746828b20ad6ffa6c5, type: 3}
+--- !u!54 &-2302130625229677018
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981990063453916623}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

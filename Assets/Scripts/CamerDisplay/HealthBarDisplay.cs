@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealthBarDisplay : MonoBehaviour
 {
-    [SerializeField] Transform camera;
+    [SerializeField] Transform cam;
 
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + cam.forward);
     }
 }
