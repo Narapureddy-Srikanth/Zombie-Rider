@@ -5890,6 +5890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickController: {fileID: 42337465}
+  healthBarScript: {fileID: 1592826262}
 --- !u!4 &1323184810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400016, guid: ddf397bb8ce11384bbc6d7b61581bbc6, type: 3}

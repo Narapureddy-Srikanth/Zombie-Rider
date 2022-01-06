@@ -25,8 +25,6 @@ public class ChaseZombieController : MonoBehaviour
         healthBarScript.SetMaxHealthSlider(currentHealth);
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
@@ -48,8 +46,15 @@ public class ChaseZombieController : MonoBehaviour
         if(currentHealth < 0)
         {
             currentHealth = 0;
+            agent.isStopped = true;
             zombieAnimator.SetBool("isDead", true);
             Destroy(gameObject, 3f);
         }
+    }
+
+    void ChaseZombieAttack()
+    {
+        GameObject playerGameObject = GameObject.Find("Player");
+        playerGameObject.GetComponent<PlayerMovement>().ChaseZombieAttack();
     }
 }

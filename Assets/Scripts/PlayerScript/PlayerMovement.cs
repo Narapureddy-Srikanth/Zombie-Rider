@@ -6,11 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private Joystick joystickController;
+    [SerializeField]
+    private HealthBarScript healthBarScript;
 
     private CharacterController playerCharacterController;
     private Animator playerAnimator;
     private float playerSpeed;
     private float rotationSpeed;
+    private float currentHealth;
+    private float damageByChaseZombie;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerSpeed = 200f;
         rotationSpeed = 500f;
+        currentHealth = 100f;
+        damageByChaseZombie = 10f;
+
+        healthBarScript.SetMaxHealthSlider(currentHealth);
     }
 
     // Update is called once per frame
@@ -70,5 +78,19 @@ public class PlayerMovement : MonoBehaviour
             return joystickController.Vertical;
         }
         return Input.GetAxis("Vertical");
+    }
+
+    /// <summary>
+    /// Called when zombie attack event is invoked
+    /// </summary>
+    public void ChaseZombieAttack()
+    {
+        currentHealth -= damageByChaseZombie;
+        healthBarScript.SetHealthSlider(Mathf.Max(0f, currentHealth));
+        if(currentHealth < 0)
+        {
+            currentHealth = 0;
+            playerAnimator.SetBool("isDead", true);
+        }
     }
 }
